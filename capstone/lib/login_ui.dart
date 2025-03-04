@@ -65,6 +65,18 @@ class LoginScreen extends StatelessWidget {
                   child: const Text("로그인"),
                 ),
               ),
+              const SizedBox(height: 10), // 간격 추가
+              Center(
+                child: TextButton(
+                  onPressed: () {
+                    print("회원가입 버튼 클릭!");
+                  },
+                  child: const Text(
+                    "회원가입",
+                    style: TextStyle(fontSize: 16, color: Colors.blue),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

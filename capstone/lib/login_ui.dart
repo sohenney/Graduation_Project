@@ -33,7 +33,7 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "로그인 수정 테스트!!!!!!!!!111",
+                "로그인 수정 테스트@@@@@@@@@@@@@@@@@@@@@@@@@@2",
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20),

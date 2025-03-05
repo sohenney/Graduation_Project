@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'loginpasstest_ui.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key}); // const 생성자로 변경
@@ -25,6 +26,13 @@ class LoginScreen extends StatelessWidget {
                   onPressed: () {
                     // 구글 로그인 기능 대체
                     debugPrint("구글 계정으로 로그인 버튼 클릭");
+
+                    // 로그인 성공 후 HomePage로 이동
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginPassTestPage()),
+                    );
                   },
                   child: const Text("Google 계정으로 로그인"),
                   style: ElevatedButton.styleFrom(

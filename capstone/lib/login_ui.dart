@@ -1,26 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
-    );
-  }
-}
-
 class LoginScreen extends StatelessWidget {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-
-  LoginScreen({super.key});
+  const LoginScreen({super.key}); // const 생성자로 변경
 
   @override
   Widget build(BuildContext context) {
@@ -30,51 +11,39 @@ class LoginScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const Icon(Icons.lock, size: 80, color: Colors.blueAccent),
+              const SizedBox(height: 20),
               const Text(
-                "로그인 수정 테스트@@@@@@@@@@@@@@@@@@@@@@@@@@2",
+                "로그인",
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 20),
-              TextField(
-                controller: emailController,
-                decoration: const InputDecoration(
-                  labelText: "이메일",
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              const SizedBox(height: 10),
-              TextField(
-                controller: passwordController,
-                obscureText: true,
-                decoration: const InputDecoration(
-                  labelText: "비밀번호",
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    String email = emailController.text;
-                    String password = passwordController.text;
-                    print("이메일: $email, 비밀번호: $password");
+                    // 구글 로그인 기능 대체
+                    debugPrint("구글 계정으로 로그인 버튼 클릭");
                   },
-                  child: const Text("로그인"),
+                  child: const Text("Google 계정으로 로그인"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    side: const BorderSide(color: Colors.grey),
+                    padding: const EdgeInsets.symmetric(vertical: 15),
+                  ),
                 ),
               ),
-              const SizedBox(height: 10), // 간격 추가
-              Center(
-                child: TextButton(
-                  onPressed: () {
-                    print("회원가입 버튼 클릭!");
-                  },
-                  child: const Text(
-                    "회원가입",
-                    style: TextStyle(fontSize: 16, color: Colors.blue),
-                  ),
+              const SizedBox(height: 20),
+              TextButton(
+                onPressed: () {
+                  // 회원가입 페이지로 이동
+                  debugPrint("회원가입 페이지로 이동");
+                },
+                child: const Text(
+                  "아직 계정이 없으신가요? 회원가입",
+                  style: TextStyle(fontSize: 16, color: Colors.blueAccent),
                 ),
               ),
             ],
